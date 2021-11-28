@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Six Caps', cursive;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg,rgb(255, 0, 106),rgb(174, 0, 255));
+}
+.menu{
+    position:relative;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.menu li{
+    position: absolute;
+    left: 0;
+    list-style: none;
+    transform-origin: 100px;
+    transition: 1s;
+    transform: rotate(0deg) translateX(80px);
+}
+.menu.active li{
+    transform: rotate(calc(360deg / 8*var(--i)));
+}
+.menu li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    background:rgb(255, 0, 157);
+    box-shadow: 0px 0px 5px black;
+    transform: rotate(calc(360deg / -8*var(--i)));
+    color: rgb(88, 18, 153);
+}
+.toggle{
+    color: rgb(88, 18, 153);
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background: rgb(255, 0, 157);
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    font-size: 5em;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    transition: transform 1s;
+}
+.menu.active .toggle{
+    transform: rotate(315deg);
+}
